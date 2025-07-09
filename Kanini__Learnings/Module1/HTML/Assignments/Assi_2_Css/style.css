@@ -1,0 +1,61 @@
+ body {
+     font-family: Arial, sans-serif;
+     background: white;
+ }
+
+ h2 {
+     color: violet;
+     font-style: italic;
+ }
+
+ table {
+     border-collapse: collapse;
+     width: 80%;
+ }
+
+ th,
+ td {
+     border: 2px solid black;
+     padding: 8px;
+     text-align: center;
+ }
+
+ th {
+     background-color: maroon;
+     color: white;
+ }
+
+
+ table tr:nth-child(odd):not(:first-child) {
+     background-color: #ff00ff;
+ }
+
+ table tr:nth-child(even):not(:first-child) {
+     background-color: cyan;
+ }
+
+
+ .fb1 {
+     background-color: lime;
+     color: black;
+ }
+
+ .fb2 {
+     background-color: lightgreen;
+     color: black;
+ }
+
+ .fb3 {
+     background-color: yellow;
+     color: black;
+ }
+
+ .fb4 {
+     background-color: lightgray;
+     color: black;
+ }
+
+ .fb5 {
+     background-color: red;
+     color: white;
+ }

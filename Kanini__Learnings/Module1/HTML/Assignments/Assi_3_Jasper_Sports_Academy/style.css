@@ -1,0 +1,94 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 12px 0;
+}
+
+.discount {
+  text-align: center;
+  color: #d32f2f;
+  font-weight: bold;
+  background-color: #fff3e0;
+}
+
+.center {
+  text-align: center;
+}
+
+a#scheduleLink {
+  text-decoration: none;
+  color: #1565c0;
+  font-weight: bold;
+}
+
+a#scheduleLink:hover {
+  text-decoration: underline;
+}

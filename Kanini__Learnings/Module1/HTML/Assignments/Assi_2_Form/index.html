@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books_Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+        
+       <form action="">
+           <h1 style="text-align: center;">Simple Form</h1>
+           <fieldset id="customer-info">
+               <legend>Customer Info</legend>
+               <label for="user-name">Name  </label>
+               <input id="user-name" required type="text" max="30">
+               <label for="telephone-number">Telephone  </label>
+               <input id="telephone-number" required type="tel" max="30">
+               <label for="email-addr">Email  </label>
+               <input type="email" required>
+           </fieldset>
+
+           <fieldset id="books">
+               <legend>Books</legend>
+               <label for="book-name">Book Name : </label>
+               <input id="book-name" type="text" required>
+               <label for="quantity">Quantity (Maximum : 5)</label>
+               <input id="quantity" type="number" max="5" required>
+           </fieldset>
+            
+           <button type="submit">Submit</button>
+       </form>
+
+       <script src="./script.js"></script>
+
+</body>
+</html>

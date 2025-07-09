@@ -1,9 +1,9 @@
 const op = document.getElementById('output');
 function calculate() {
-    const ip_1 = document.getElementById('input_1').value;
-    const ip_2 = document.getElementById('input_2').value;
-    const opr = document.getElementById('operator').value;
-    let result = '';
+    const ip_1 = document.getElementById('input_1').value;  
+    const ip_2 = document.getElementById('input_2').value;  
+    const opr = document.getElementById('operator').value;  
+    let result = '';        
 
     if (ip_1 === '' || ip_2 === '' || opr === '') {
         result = 'Please fill all fields.';
