@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-section {
+    flex: 1 1 45%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.text-section {
+    flex: 1 1 50%;
+    line-height: 1.6;
+}
+
+.footer-text {
+    margin-top: 30px;
+    line-height: 1.6;
+}
