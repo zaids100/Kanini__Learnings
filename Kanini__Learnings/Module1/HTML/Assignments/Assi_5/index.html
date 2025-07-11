@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Accessories Order Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            background: #fff;
+            margin: 40px auto;
+            padding: 30px 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: #34495e;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .combo-list {
+            margin: 10px 0;
+        }
+
+        .combo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .combo-item input {
+            margin-right: 10px;
+        }
+
+        .combo-item span {
+            flex-grow: 1;
+            font-size: 14px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2c3e50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a242f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>One-Stop Mobile Accessories</h2>
+
+        <div class="section-title">Personal Details</div>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <div class="section-title">Combo Offers (Save up to Rs. 400 on each combo!)</div>
+
+            <div class="combo-list">
+                <div class="combo-item">
+                    <input type="checkbox" id="combo1" name="combo1" value="799" />
+                    <span>SanDisk 32GB micro SDHC + iXCC Micro-USB cable</span>
+                    <span class="price">Rs.799/-</span>
+                </div>
+
+                <div class="combo-item">
+                    <input type="checkbox" id="combo2" name="combo2" value="899" />
+                    <span>Sandisk Cruzer Blade 32GB Pen Drive + Samsung Type B 15W Travel Adaptor</span>
+                    <span class="price">Rs 899/-</span>
+                </div>
+
+                <div class="combo-item">
+                    <input type="checkbox" id="combo3" name="combo3" value="1199" />
+                    <span>Sony WF-1000XM3 Headphone + SanDisk 16GB micro SDHC</span>
+                    <span class="price">Rs 1199/-</span>
+                </div>
+
+                <div class="combo-item">
+                    <input type="checkbox" id="combo4" name="combo4" value="299" />
+                    <span>Mpow Car Phone Mount + Zebroni 1 Amp Turbo Charger</span>
+                    <span class="price">Rs 299/-</span>
+                </div>
+
+                <div class="combo-item">
+                    <input type="checkbox" id="combo5" name="combo5" value="999" />
+                    <span>Tribit XSound Go Bluetooth Speaker + Mpow Car Mount</span>
+                    <span class="price">Rs 999/-</span>
+                </div>
+            </div>
+
+            <div class="note">
+                * Enjoy 20% discount on purchasing combos worth 2000 and above !!
+            </div>
+
+            <br />
+            <div id="price-summary" style="margin: 15px; font-size: 16px; color: #2c3e50; font-weight: 500;">
+                
+            </div>
+            <button type="submit" onclick="placeOrder()">PLACE ORDER</button>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
