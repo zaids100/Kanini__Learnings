@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 40px 20px;
+      display: block;
+    }
+
+    /* Quiz setup form (menu) */
+    .menu {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .menu form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu label {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .menu input,
+    .menu select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border 0.3s ease;
+    }
+
+    .menu input:focus,
+    .menu select:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .menu button {
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Quiz container styles */
+    #quiz-container {
+      display: none;
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow: visible;
+      word-wrap: break-word;
+    }
+
+    .question-block {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .question-block h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .options div {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+
+    .options input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #007BFF;
+    }
+
+    .options label {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    /* Submit button inside quiz */
+    #quiz-container button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #quiz-container button:hover {
+      background-color: #047c04;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 500px) {
+      .menu {
+        padding: 20px;
+      }
+
+      #quiz-container {
+        padding: 20px;
+      }
+
+      .question-block h3 {
+        font-size: 16px;
+      }
+
+      .menu button,
+      #quiz-container button {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="menu">
+    <form action="">
+      <label for="amount">Amount : </label>
+      <input type="number" min="1" max="10" id="amount">
+      <label for="category">Category : </label>
+      <select name="" id="category-options">
+
+      </select>
+      <label for="difficulty">Difficulty : </label>
+      <select name="" id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <label for="type">Type : </label>
+      <select name="" id="type">
+        <option value="multiple">Multiple</option>
+        <option value="boolean">True/False</option>
+      </select>
+      <button onclick="startQuiz()" type="button">Start Quizz</button>
+    </form>
+  </div>
+  <div id="quiz-container"
+    style="display: none; max-width: 700px; margin-top: 40px; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
