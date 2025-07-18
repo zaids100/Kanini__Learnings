@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login/Register</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00a84f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #008f42;
+        }
+
+        .toggle-link {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .toggle-link a {
+            color: #00a84f;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div id="loginForm">
+            <input type="text" id="loginUsername" placeholder="username">
+            <input type="password" id="loginPassword" placeholder="password">
+            <button id="loginBtn">LOGIN</button>
+            <div class="toggle-link">Not registered? <a id="showRegister">Create an account</a></div>
+        </div>
+
+        <div id="registerForm" class="hidden">
+            <input type="text" id="registerUsername" placeholder="name">
+            <input type="password" id="registerPassword" placeholder="password">
+            <input type="email" id="registerEmail" placeholder="email address">
+            <button id="registerBtn">CREATE</button>
+            <div class="toggle-link">Already registered? <a id="showLogin">Sign In</a></div>
+        </div>
+    </div>
+
+    <script>
+       
+        $('#showRegister').click(() => {
+            $('#loginForm').hide();
+            $('#registerForm').show();
+        });
+
+        $('#showLogin').click(() => {
+            $('#registerForm').hide();
+            $('#loginForm').show();
+        });
+
+        $('#registerBtn').click(() => {
+            const name = $('#registerUsername').val().trim();
+            const pass = $('#registerPassword').val().trim();
+            const email = $('#registerEmail').val().trim();
+
+            if (!name || !pass || !email) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+            if (users.find(u => u.name === name)) {
+                alert("Username already exists.");
+                return;
+            }
+
+            users.push({ name, pass, email });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Account created! Please login.");
+            $('#showLogin').click();
+        });
+
+        $('#loginBtn').click(() => {
+            const name = $('#loginUsername').val().trim();
+            const pass = $('#loginPassword').val().trim();
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.name === name && u.pass === pass);
+
+            if (user) {
+                alert("Login successful!");
+            } else {
+                alert("Invalid username or password.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

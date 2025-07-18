@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus and Change Example</title>
+  <style>
+    input.changed:focus {
+      background-color: green;
+      color: white;
+    }
+
+    input.changed.blur {
+      background-color: gray;
+      color: white;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="first-name">First name</label>
+    <input type="text" id="first-name"><br><br>
+
+    <label for="last-name">Last name</label>
+    <input type="text" id="last-name"><br><br>
+
+    <button type="button">Submit</button>
+  </form>
+
+  <div id="messages" class="message"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let firstNameChanged = false;
+      let lastNameChanged = false;
+
+      $('#first-name').on('input', function () {
+        $(this).addClass('changed').removeClass('blur');
+        firstNameChanged = true;
+      });
+
+      $('#last-name').on('input', function () {
+        $(this).addClass('changed').removeClass('blur');
+        lastNameChanged = true;
+      });
+
+      $('#first-name').on('blur', function () {
+        if (firstNameChanged) {
+          $(this).addClass('blur');
+          $('#messages').append('<p>You have changed the First name</p>');
+          firstNameChanged = false;
+        }
+      });
+
+      $('#last-name').on('blur', function () {
+        if (lastNameChanged) {
+          $(this).addClass('blur');
+          $('#messages').append('<p>You have changed the Last name</p>');
+          lastNameChanged = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

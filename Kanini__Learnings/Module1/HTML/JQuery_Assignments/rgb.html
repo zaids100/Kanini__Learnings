@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RGB Panel</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-group button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 16px;
+            border: 1px solid #aaa;
+            background-color: #f8f8f8;
+            cursor: pointer;
+        }
+
+        .btn-group button:hover {
+            background-color: #ddd;
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+
+        .color-box {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto 20px;
+            background-color: blue;
+            /* Default static color */
+            border: 1px solid #000;
+        }
+
+        .event-log {
+            font-weight: bold;
+        }
+
+        .event-message {
+            font-weight: normal;
+            margin-top: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>RGB PANEL</h1>
+
+    <div class="btn-group">
+        <button class="btn" type="submit" id="bluebtn" name="blue">Blue</button>
+        <button class="btn" type="submit" id="greenbtn" name="green">Green</button>
+        <button class="btn" type="submit" id="redbtn" name="red">Red</button>
+    </div>
+
+    <div class="label">COLOR PANEL BOX</div>
+    <div class="color-box"></div>
+
+    <div class="label">EVENT LOG</div>
+    <div class="event-message">Button clicked: Blue</div>
+
+    <script>
+         
+        document.querySelectorAll('.btn').forEach((btn)=>{
+            btn.addEventListener('click',changeColor);
+        })
+
+        function changeColor(e){
+              const colorBox=document.querySelector('.color-box');
+              console.log(e);
+              colorBox.style.backgroundColor=e.target.name;
+        }
+            
+
+    </script>
+
+</body>
+
+</html>

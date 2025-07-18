@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .form-group label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .form-group select {
+            padding: 5px;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .ticket-grid {
+            display: grid;
+            grid-template-columns: 30px repeat(10, 30px);
+            gap: 5px;
+            background-color: #fff;
+            padding: 20px;
+            max-width: max-content;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .label {
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .seat {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .seat:hover {
+            background-color: #ddd;
+        }
+
+        .seat.booked {
+            background-color: orange;
+            cursor: not-allowed;
+        }
+
+        .book-button {
+            padding: 12px 24px;
+            background-color: #28a745;
+            /* Green color */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .book-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .book-button:active {
+            background-color: #1e7e34;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Movie Ticket Booking</h1>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="seat-code">Seat Row</label>
+            <select id="seat-row">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="J">J</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="number-of-tickets">Number of Tickets</label>
+            <select id="number-of-tickets">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="seat-number">Starting Seat</label>
+            <select id="seat-number">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button class="book-button">Book Ticket</button>
+        </div>
+    </div>
+    <div class="ticket-grid"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./movie_ticket.js"></script>
+</body>
+
+</html>

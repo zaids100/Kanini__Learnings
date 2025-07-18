@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Table</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #f0f2f5;
+        }
+
+        th,
+        td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            color: black;
+            font-weight: 500;
+        }
+
+        th {
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* House-specific styling */
+        .gryffindor {
+            background-color: #ef2e3e;
+            /* light red */
+        }
+
+        .hufflepuff {
+            background-color: #f3c634;
+            /* light yellow */
+        }
+
+        /* Optional: Adjust text color for contrast */
+        .gryffindor td {
+            color: #721c24;
+        }
+
+        .hufflepuff td {
+            color: #856404;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>House Name</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr>
+                <td class="name">Luna Lovegood</td>
+                <td class="houseName">Ravenclaw</td>
+            </tr>
+            <tr>
+                <td class="name">Cedric Diggory</td>
+                <td class="houseName">Hufflepuff</td>
+            </tr>
+            <tr>
+                <td class="name">Draco Malfoy</td>
+                <td class="houseName">Slytherin</td>
+            </tr>
+            <tr>
+                <td class="name">Hermione Granger</td>
+                <td class="houseName">Gryffindor</td>
+            </tr>
+            <tr>
+                <td class="name">Cho Chang</td>
+                <td class="houseName">Ravenclaw</td>
+            </tr>
+            <tr>
+                <td class="name">Neville Longbottom</td>
+                <td class="houseName">Gryffindor</td>
+            </tr>
+            <tr>
+                <td class="name">Pansy Parkinson</td>
+                <td class="houseName">Slytherin</td>
+            </tr>
+            <tr>
+                <td class="name">Nymphadora Tonks</td>
+                <td class="houseName">Hufflepuff</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <script>
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const houseCell = row.querySelector('.houseName');
+            const houseName = houseCell.textContent.trim().toLowerCase();
+
+            if (houseName === 'gryffindor') {
+                row.classList.add('gryffindor');
+            } else if (houseName === 'hufflepuff') {
+                row.classList.add('hufflepuff');
+            }
+        });
+    </script>
+</body>
+
+</html>
